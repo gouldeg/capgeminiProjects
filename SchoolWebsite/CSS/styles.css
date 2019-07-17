@@ -38,7 +38,14 @@ nav li a {
 nav li a:hover {
   background-color: #111;
 }
-
+.test{
+	overflow: scroll;
+	width:70%;
+	height: 300px;
+}
+.side{
+	width:350px;
+}
 .active {
 	
 }
