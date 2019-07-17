@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" type="text/css" href="../CSS/styles.css">
+	<title>Registration</title>
+</head>
+
+<body>
+	<header class="hdr">
+		<div align="center"><h1>Cranbrook Middle School</h1></div>
+	</header>
+	<nav>
+		<ul align="center">
+  			<li><a href="index.html">Home</a></li>
+  			<li><a href="news.html">News</a></li>
+  			<li><a class="active" href="registration.html">Registration</a></li>
+  			<li><a href="about.html">About</a></li>
+  			<li><a href="sports.html">Sports</a></li>
+		</ul>
+	</nav>
+
+
+<form>
+<h2 align="center">Student Registration</h2>
+<div align="center">
+<table>
+<tr><td><hr><strong>Student Info:</strong><hr></td></tr>
+<tr>
+<td>First Name:</td>
+<td><input type="text" name="firstName" size="20"  placeholder="Please Enter FirstName"></td>
+</tr>
+
+<tr>
+<td>Last Name:</td>
+<td><input type="text" name="lastName" size="20"  placeholder="Please Enter lastName"></td>
+</tr>
+<tr>
+<td>Address:</td>
+<td>
+	<textarea rows="5" cols="20" id="address"></textarea>
+</td>
+</tr>
+<tr>
+<td>Grade:</td>
+<td>
+	<input name="type" size="20" list="type">
+	<datalist id="type">
+		<option>6th</option>
+		<option>7th</option>
+		<option>8th</option>
+	</datalist>
+</td>
+</tr>
+<tr>
+	<td>Date Of Birth</td>
+	<td>
+		<input type="date" name="dob">
+	</td>
+</tr>
+<tr>
+	<td>Gender</td>
+	<td>
+		<input type="radio" name="gender">Male
+		<input type="radio" name="gender">Female
+		<input type="radio" name="gender">Other
+		
+	</td>
+</tr>
+
+<tr><td><br><hr><strong>Parent Contact Info:</strong><hr></td></tr>
+<tr>
+<td>First Name:</td>
+<td><input type="text" name="pfirstName" size="20"  placeholder="Please Enter FirstName"></td>
+</tr>
+
+<tr>
+<td>Last Name:</td>
+<td><input type="text" name="plastName" size="20"  placeholder="Please Enter lastName"></td>
+</tr>
+<tr>
+<tr>
+<td>Phone Number:</td>
+<td>
+	<input type="text" name="mobileNo" size="20" pattern="[0-9]{10}" >
+</td>
+</tr>
+
+<tr>
+	<td>Relationship</td>
+	<td>
+		<input type="checkbox" name="food">Father
+		<input type="checkbox" name="cloth">Mother
+		<input type="checkbox" name="cosmetics">Step-Parent
+		<input type="checkbox" name="agri">Legal Guardian
+		
+	</td>
+
+</tr>
+
+</tr>
+
+<tr>
+	
+</tr>
+
+<tr>
+	<td>Level of Nerves</td>
+	<td>
+		<input type="range" name="fees" min="12000" max="100000">
+	</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+	<input type="submit" name="Save" value="Save">
+	<input type="button" name="Update" value="Update">
+	<input type="reset" name="Clear" value="Clear">
+</td>
+
+</tr>
+
+</table>
+
+</div>
+</form>
+
+
+
+
+</body>
+
+
+</html>

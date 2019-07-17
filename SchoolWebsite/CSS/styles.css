@@ -1,0 +1,44 @@
+@charset "ISO-8859-1";
+h1 {
+	color: white;
+	font-size: 57px;
+}
+
+.hdr{
+	background-image: url("../Pages/imgs/playground2.jpg");
+	background-attachment: fixed;
+  	background-position:top; 
+	padding: 30px;
+}
+
+body {
+	background-color: lightgray;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #111;
+}
+
+.active {
+	
+}
