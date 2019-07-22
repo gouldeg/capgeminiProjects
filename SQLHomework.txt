@@ -1,0 +1,142 @@
+10.) 
+
+create table product(productNumber int primary key, productName varchar(25),price numeric(10,2), manufacturer varchar(25));
+
+create table client(clientNumber int primary key, clientName varchar(25), Address varchar(75), city varchar(30), pincode int, state varchar(25), balance numeric(10,2));
+
+create table salesmen(salesmenNumber int primary key, name varchar(25), address varchar(75), city varchar(25), pincode int, state varchar(25), salary int, deliveryDate date, totalQuantity int, productRate numeric(5,2));
+
+create table orders(orderNumber int primary key, date Date, clientNumber int, foreign key(clientNumber) references client(clientNumber), billed boolean, deliveryDate Date, salesmenNumber int, foreign key(salesmenNumber) references salesmen(salesmenNumber));
+
+insert into product values(1,'Item 1', 10.05, 'Capgemini');
+
+insert into product values(2,'Item 2', 150.00, 'Target');
+
+insert into product values(3,'Item 3', 15.00, 'Gamestop');
+
+insert into product values(4,'Item 4', 35.00, 'Apple');
+
+insert into product values(5,'Item 5', 3000.00, 'Google');
+
+insert into client values(1,'Eli','2702 ave of the woods','Louisville',40241,'Kentucky',500.00);
+
+insert into client values(2,'John Smith','2703 park place','Chicago',35525,'IL',200.00);
+
+insert into client values(3,'John Smith','2703 park place','Chicago',35525,'IL',200.00);
+
+insert into client values(4,'Jake Murphy','4636 Absolute Drive','Philly',2352,'PN',2058.00);
+
+insert into client values(5,'John Smith','2703 boardwalk','Pune',35525,'IL',200.00);
+
+insert into salesmen values(1,'Jacob Price', '4998 Nell lee rd', 'Bennington', 45056, 'IN', 40000, '2019-01-01', 65, 10.05);
+
+insert into salesmen values(2,'Jeff Dunham', '3535 Baltic Ave', 'New York', 23522, 'NY', 80000, '2019-01-01', 165, 20.05);
+
+insert into orders values(1, '2019-01-01', 2, true, '2019-10-10', 1);
+
+A.) select clientName, city from client;
+
+B.) select * from product;
+
+C.) Select clientName from client where clientName like '_a%';
+
+D.) select * from client where city='pune';
+
+E.) select * from product where price > 2000 and price < 5000;
+
+F.) alter table product add NEW_PRICE numeric(10,2);
+
+G.) alter table salesmen change productRate new_product_rate numeric(5,2);
+
+H.) select * from product order by productName;
+
+I.) select orderNumber, date from orders;
+
+J.) delete from orders where date < '2008-08-25';
+
+k.) update orders set date = '2016-08-08' where orderNumber = 1;
+
+l.) update client set balance = 1200.00 where clientNumber = 3;
+
+m.) select * from product where productName = 'HDD1034' or productName = 'DVDRW';
+
+n.) select clientName, city, state from client where state != 'Maharashtra';
+
+o.) select * from orders where billed = false;
+
+
+11.)
+
+create table student(rollNumber int primary key, name varchar(25), address varchar(75), semester varchar(20));
+
+create table academicProgram(programName varchar(20), duration int, programCode varchar(10) primary key, 
+
+a.) select studentName, address, courses from students where department = 'CSE';
+
+b.) select count(*) as 
+
+c.) select courseName from departments where name = 'cse';
+
+d.) select name from students where semester = 4;
+
+e.) select name from students where gpa = 8.5;
+
+f.)
+
+g.)
+
+h.) 
+
+i.) select semester from students where courses like '%DBMS%';
+
+j.) select name from students and group by name;
+
+k.) update students set address = 'Pune' where std_id='CSI08002';
+
+l.)
+
+m.) select coursename from departments where name = 'CSE' and courses.name like '%computer science%';
+
+n.) select name from students where address = 'Pune';
+
+o.) select count(name) as NumberOfDepartments from departments;
+
+
+8.)
+
+create table flights(flno int primary key, flightFrom varchar(35), flightTo varchar(35), distance int, departs time, arrives time, price numeric(10,2));
+
+create table aircraft(aid int primary key, aName varchar(20), crusingRange int);
+
+create table employees(eid int primary key, ename varchar(20), salary int);
+
+create table certified(eid int, foreign key(eid) references employees(eid), aid int, foreign key(aid) references aircraft(aid)); 
+
+
+1.) Select aName from aircraft where aircraft.aid in (select aid from certified, employees where not exists (select salary from employees where certified.eid = employees.eid and employees.salary < 80000)) 
+
+2.) Select max(crusingrange) from aircraft where (select eid from certified where certified.eid (selected
+
+3.) Select ename from employees where employees.eid in (select eid from certified) and salary < (select min(price) from flights where flightFrom = 'Los Angeles' and flightTo = 'Honolulu');
+
+4.) Select aName, avg(select salary from employees where eid = 
+
+5.) select ename from employees where eid in (select eid from certified where aid in (select aid from aircraft where aname like '%Boeing%'));
+
+6.) Select aid from aircraft where crusingRange > (select distance from flights where flightFrom='Los Angeles' and flightTo = 'Chicago');
+
+7.) select from, to from flights where distance <= (select cruising range from aircraft where aid in (select aid from certified where eid in (select eid from employees where salary > 100000)));
+
+8.) select ename from employees where eid in (select eid from certified where aid != (select aid from aircraft where aname like '%boeing%'));
+
+9.)
+
+10.)
+
+11.) 
+
+12.) Select ename, salary from employees where eid = (select eid from certified) and not exisits (select crusingRange from aircraft where crusingRange < 1000 and aid = certified.aid);
+
+13.)
+
+14.)
